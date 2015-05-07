@@ -1,0 +1,9 @@
+<div 
+ ng-repeat="champion in champions.list"
+>
+	<a ui-sref="champion({
+		id: champion.id
+	})">
+ 		{{ ::champion.name }}
+	</a>
+</div>

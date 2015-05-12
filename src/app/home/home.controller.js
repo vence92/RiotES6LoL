@@ -7,6 +7,10 @@ class HomeCtrl {
 
         let localItems = [];
 
+        //retrieve localStorage items
+        getLocalItems();
+
+        // private
         function getLocalItems() {
             for ( var i = 0, len = $window.localStorage.length; i < len; ++i ) {
                 var item = $window.localStorage.getItem($window.localStorage.key(i));
@@ -17,17 +21,26 @@ class HomeCtrl {
             return localItems;
         }
         
-        getLocalItems();
-
-        function post(userName) {
+        
+        // public
+        function postUser(userName) {
             $state.go('user', {
                 name: userName.toLowerCase()
             });
         }
 
+        function postUsers(userName1, userName2) {
+            console.log(userName1, userName2);
+            $state.go('users', {
+                name1: userName1.toLowerCase(),
+                name2: userName2.toLowerCase()
+            });
+        }
+
 
         angular.extend(this, {
-            post: post,
+            postUser: postUser,
+            postUsers: postUsers,
             localItems: localItems
         });
     }

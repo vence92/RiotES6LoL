@@ -5,6 +5,7 @@ import NavbarCtrl from '../app/components/navbar/navbar.controller';
 import Champions from '../app/Champions/champions';
 import Champion from '../app/champion/champion';
 import User from '../app/user/user';
+import Users from '../app/users/users';
 import Localstorage from '../app/common/localStorage';
 
 angular.module('myProject', 
@@ -19,6 +20,7 @@ angular.module('myProject',
     'Champions',
     'Champion',
     'User',
+    'Users',
     'Localstorage'
   ])
   .controller('HomeCtrl', HomeCtrl)

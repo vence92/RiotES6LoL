@@ -1,13 +1,17 @@
-<local-storage-items items="ctrlHome.localItems"></local-storage-items>
+
+<div flex="20">
+    <local-storage-items items="ctrlHome.localItems">
+    </local-storage-items>
+</div>
 
 <div
- class="login" 
- layout-gt-sm="row"
- layout-sm="column"
+ class="login"
+ layout="row"
  layout-wrap
- layout-align="center">
+ layout-align="center"
+ flex="70">
     
-    <md-content layout-margin flex="33" class="login__form">
+    <md-content layout-margin flex="45" class="login__form">
         <form name="userForm">
             <h4>Voir le profil d'un joueur</h4>
             <md-input-container>
@@ -24,7 +28,7 @@
         </form>
     </md-content>
 
-    <md-content layout-margin flex="33" class="login__form">
+    <md-content layout-margin flex="45" class="login__form">
         <form name="userForm">
             <h4>Comparer plusieurs joueurs</h4>
             <md-input-container>

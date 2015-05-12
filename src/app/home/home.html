@@ -1,0 +1,42 @@
+<local-storage-items items="ctrlHome.localItems"></local-storage-items>
+
+<div
+ class="login" 
+ layout="row"
+ layout-wrap
+ layout-align="center">
+    
+    <md-content layout-margin flex="33" class="login__form">
+        <form name="userForm">
+            <h4>Voir le profil d'un joueur</h4>
+            <md-input-container>
+                <label>Nom du joueur</label>
+                <input ng-model="name">
+            </md-input-container>
+
+            <md-button
+             class="md-raised md-primary"
+             ng-click="ctrlHome.post(name)"
+             >
+             Valider
+            </md-button>
+        </form>
+    </md-content>
+
+    <md-content layout-margin flex="33" class="login__form">
+        <form name="userForm">
+            <h4>Comparer plusieurs joueurs</h4>
+            <md-input-container>
+                <label>Nom du joueur</label>
+                <input ng-model="name">
+            </md-input-container>
+
+            <md-button
+             class="md-raised md-primary"
+             ng-click="ctrlHome.post(name)"
+             >
+             Valider
+            </md-button>
+        </form>
+    </md-content>
+</div>

@@ -1,9 +1,7 @@
 <div 
- ng-repeat="champion in champions.list"
+ ng-repeat="champion in ctrlChampions.list"
+ ng-click="ctrlChampions.get(champion.id)"
 >
-	<a ui-sref="champion({
-		id: champion.id
-	})">
- 		{{ ::champion.name }}
-	</a>
+	{{ ::champion.name }}
+
 </div>

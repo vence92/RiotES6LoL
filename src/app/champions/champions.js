@@ -7,13 +7,20 @@ angular.module('Champions', [])
 	.controller('ChampionsCtrl', ChampionsCtrl)
 	.service('ChampionsService', ChampionsService)
 
-	.config(function ($stateProvider, $urlRouterProvider) {
+	.config(function ($stateProvider) {
 		$stateProvider
 			.state('champions', {
 				url: '/champions',
 				templateUrl: 'app/Champions/champions.tpl.html',
-				controller: 'ChampionsCtrl',
-				controllerAs: 'champions',
-				resolve: ChampionsCtrl.resolve
+				controller: ChampionsCtrl.name,
+				controllerAs: ChampionsCtrl.nameAs,
+				resolve: {
+				  	resolvedChamps: function (ChampionsService) {
+				    	return ChampionsService.getChampions()
+					    	.then((response) => {
+						    	return response;
+						    });
+					}
+				}
 			});
 	});

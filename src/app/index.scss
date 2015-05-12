@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
 
+$background-global: #efefef;
+
 html {
   font-family: 'Roboto Slab', serif;
 }
@@ -52,6 +54,13 @@ section.jumbotron {
       width: 50px;
     }
   }
+}
+
+
+.login__form {
+  box-shadow: 0 0 0 2px $background-global;
+  height: auto;
+  padding: 1.5rem;
 }
 
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject

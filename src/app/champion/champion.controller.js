@@ -1,16 +1,17 @@
 'use strict';
 
 class ChampionCtrl {
-	constructor ($scope, $state, resolveChamp) {
+	static get nameAs() { return 'ctrlChampion'; }
 
-		let details = resolveChamp;
-
+	constructor (resolvedChamp) {
+		
+		let champion = resolvedChamp.data;
+		
 		angular.extend(this, {
-			details: details
+			champion: champion
 		});
 	}
-}
 
-ChampionCtrl.$inject = ['$scope', '$state', 'resolveChamp'];
+}
 
 export default ChampionCtrl;

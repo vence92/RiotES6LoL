@@ -1,24 +1,23 @@
 'use strict';
 
 class ChampionsCtrl {
-	constructor ($scope, $state, ChampionsService) {
+	static get nameAs() { return 'ctrlChampions'; }
+
+	constructor (resolvedChamps, $state) {
 		
-		let list = ChampionsService.champions;
+		let list = resolvedChamps.data;
+
+		function get(champId) {
+			$state.go('champion', {
+				id: champId
+			});
+		}
 
 		angular.extend(this, {
-			list: list
+			list: list,
+			get: get
 		});
 	}
 }
-
-ChampionsCtrl.resolve = {
-  initChamps: function (ChampionsService) {
-    return ChampionsService.getChampions().then(function (response) {
-    	ChampionsService.champions = response;
-    });
-  }
-};
-
-ChampionsCtrl.$inject = ['$scope', '$state', 'ChampionsService'];
 
 export default ChampionsCtrl;
